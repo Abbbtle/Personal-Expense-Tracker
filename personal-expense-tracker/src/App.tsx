@@ -4,14 +4,20 @@ import './App.css'
 function App() {
   const userName = "Tebogo";
 
-  const expense1 = "Uber";
-  const amount1 = 120;
-
-  const expense2 = "Lunch";
-  const amount2 = 85;
-
-  const expense3 = "Coffee";
-  const amount3 = 30;
+  const expenses = [
+    {
+      name: "Uber",
+      amount: 120
+    },
+    {
+      name: "Lunch",
+      amount: 85
+    },
+    {
+      name: "Coffee",
+      amount: 30
+    }
+  ]
 
   return (
     <div>
@@ -19,9 +25,11 @@ function App() {
 
       <p>Welcome {userName}</p>
 
-      <p>{expense1} - R{amount1}</p>
-      <p>{expense2} - R{amount2}</p>
-      <p>{expense3} - R{amount3}</p>
+      {expenses.map((expense) => (
+        <p>
+          {expense.name}: R{expense.amount}
+        </p>
+      ))}
     </div>
   );
 }
